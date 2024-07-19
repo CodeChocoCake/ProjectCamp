@@ -144,14 +144,18 @@ console.log(b); // 15231
 */
 
 function findLongStr(str) {
-    const arr = str
+    // const arr = str
+    //     .split(' ')
+    //     .find(
+    //         (string) =>
+    //             string.length ===
+    //             Math.max(...str.split(' ').map((string) => string.length))
+    //     );
+
+    return str
         .split(' ')
-        .find(
-            (string) =>
-                string.length ===
-                Math.max(...str.split(' ').map((string) => string.length))
-        );
-    return arr;
+        .sort((a, b) => b.length - a.length)
+        .shift();
 }
 
 let result = findLongStr('we are the champion');
