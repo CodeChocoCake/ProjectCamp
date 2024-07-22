@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function createDOM() {
+                console.time();
+                const ulEl = document.querySelector('ul');
+                let liEl = '';
+                for (let i = 0; i < 2000; i++) {
+                    liEl += `<li>${i}</li>`;
+                }
+                ulEl.innerHTML = liEl;
+                console.timeEnd();
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="createDOM()">추가</button>
+        <ul></ul>
+    </body>
+</html>
